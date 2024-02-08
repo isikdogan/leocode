@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}{% endblock %}</title>
+  {% block meta %}{% endblock %}
+  <link href="{{ subdir }}css/bootstrap.min.css" rel="stylesheet">
+  <link href="{{ subdir }}css/leocode.css" rel="stylesheet">
+  <link rel="icon" href="{{ subdir }}favicon.ico">
+  <link rel="apple-touch-icon" href="{{ subdir }}favicon.ico">
+  <link href='https://fonts.googleapis.com/css?family=Rubik:400,400italic,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+  <script src="https://kit.fontawesome.com/7635ba45f7.js" crossorigin="anonymous"></script>
+</head>
+<body class="text-white bg-dark">
+  <div class="container p-3 flex-column">
+    <main>
+      {% block content %}{% endblock %}
+    </main>
+  </div>
+</body>
+</html>

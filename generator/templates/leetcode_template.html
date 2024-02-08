@@ -1,0 +1,76 @@
+{% extends "main_template.html" %}
+{% block title %}{{ post["title"] }}{% endblock %}
+
+{% block meta %}
+
+<link href="css/prism.css" rel="stylesheet" />
+<script src="js/prism.js"></script>
+<script src="js/leocode.js"></script>
+
+
+{% endblock %}
+
+{% block content %}
+
+<br>
+
+<h1 class="p-3 text-center fs-4 fw-normal"><img src="logo.svg" alt="Leo's Logo" class="inline-logo"/> <span class="accent-color">LL90:</span> Leo's LeetCode 90</h1>
+
+<div class="mb-1 p-3 rounded bg-black">
+
+    <p><i class="fa-solid fa-laptop-code fa-fw"></i> This list of 90 questions is <span class="accent-color">designed to maximize learning efficiency</span> by spreading questions on the same topic unless they are closely related, increasing the difficulty gradually but not strictly, and ensuring a good coverage of topics even if the whole list is not completed.</p>
+    <p><i class="fa-solid fa-circle-nodes fa-fw"></i> It <span class="accent-color">overlaps with popular lists</span> like Grind75, Neetcode Roadmap, and LeetCode Top Interview 150. However, it focuses on questions that are more reasonable for <span class="accent-color">Software Engineer-adjacent roles</span>, such as Research Engineer, Research Scientist, Machine Learning and Computer Vision Engineer, and so on.</p>
+    <p><i class="fa-solid fa-file-code fa-fw"></i><span class="accent-color"> Solutions are included.</span> Expand the tabs to see them. I tried to keep them as clean and easy to follow as possible.</p>
+    <p><i class="fa-solid fa-bookmark fa-fw"></i> This page auto-saves your progress. <span class="accent-color">Bookmark it</span>, and resume when ready. To switch devices or browsers, <span class="accent-color">download your progress</span> and upload later to continue where you left off.</p>
+</div>
+
+<div class="d-grid gap-2 d-sm-flex justify-content-center mt-4">
+    <button id="download-button" class="btn btn-secondary btn-sm rounded-pill"><i class="fas fa-download"></i> Download Progress</button>
+    <input id="upload-button" type="file" accept=".json" style="display: none;">
+    <button id="upload-button-trigger" class="btn btn-secondary btn-sm rounded-pill"><i class="fas fa-upload"></i> Upload Progress</button>
+    <a href="https://github.com/isikdogan/leocode" class="btn btn-light btn-sm rounded-pill"><i class="fa-brands fa-github"></i>&nbsp;&nbsp;Star on GitHub</a>
+    <a href="https://www.isikdogan.com" class="btn btn-light btn-sm rounded-pill"><i class="fa-solid fa-chalkboard-user"></i>&nbsp;&nbsp;Who's Leo?</a>
+</div>
+
+
+<div id="progress-bar-container">
+    <div id="progress-bar"></div>
+    <span id="progress-text"></span>
+</div>
+
+<div class="leetcode-list">
+    {% set difficultyClasses = {
+        "Easy": "difficulty-tag-easy",
+        "Medium": "difficulty-tag-medium",
+        "Hard": "difficulty-tag-hard"
+    } %}
+
+    {% for section in post["content_sections"] %}
+        <details class="mb-1 p-3 rounded">
+            <summary>
+                <div class="title-tag">
+                    <a href="{{ section["link"] }}" target="_blank" rel="noopener noreferrer">{{ section["title"] }}</a>
+                    
+                    <span class="{{ difficultyClasses[section["tag"]] }} ms-auto">{{ section["tag"] }}</span>
+
+                    <i class="ms-3 fas fa-angle-down"></i>
+                    <input class="ms-3 marked-as-solved question-checkbox" type="checkbox" data-title="{{ section["title"] }}">
+                </div>
+            </summary>
+            <div class="solution ms-4">
+                <br>
+                {{ section["content"] }}
+            </div>
+        </details>
+    {% endfor %}
+
+</div>
+
+<div class="mb-4 mt-4 p-4 text-center rounded bg-black">
+
+<i class="fa-solid fa-lightbulb fa-fw accent-color"></i> If you have any suggestions or ideas, please feel free to open an issue or submit a pull request on <a href="https://github.com/isikdogan/leocode">GitHub</a>.<br>
+Your contributions are always appreciated!
+
+</div>
+
+{% endblock %}
