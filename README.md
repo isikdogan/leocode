@@ -11,7 +11,7 @@ I created this list of 90 questions to maximize learning efficiency by:
 
 ## Target Audience
 
-This list is primarily designed for those getting ready for interviews in roles adjacent to Software Engineering, but not exactly Software Engineering. This includes positions like Research Engineer, Research Scientist, Machine Learning Engineer, Computer Vision Engineer, and so on. It's also great for anyone who enjoys tackling these coding puzzles.
+This list is primarily designed for those getting ready for interviews in roles adjacent to Software Engineering, but not exactly Software Engineering. This includes positions like Research Engineer, Research Scientist, Machine Learning Engineer, Computer Vision Engineer, and so on.
 
 While this list overlaps with popular lists like Grind75, Neetcode Roadmap, and LeetCode Top Interview 150, it's uniquely tailored. In addition to the classics, this list focuses on questions that are more practical and relevant for the mentioned roles. These aren't overly difficult questions, but rather ones that are genuinely useful and often implemented by professionals in these fields time to time.
 
