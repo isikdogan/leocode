@@ -45,7 +45,7 @@ To update the `index.html`, simply `cd generator`, update `content.md`, and run 
 
 ## Contributions 
 
-Contributions are welcome! If you have suggestions or want to improve the project, feel free to open an issue or submit a pull request
+Contributions are welcome! If you have suggestions or want to improve the project, feel free to open an issue or submit a pull request.
 
 ## Fun Fact
 
